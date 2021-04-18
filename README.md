@@ -93,7 +93,7 @@ python produce_figure.py arithmetic -i 5 -p 1 -k 3 -s 2 -e 0 arithmetic_conv
 
 The output png/pdf is genearted in `./out/`.
 
-<img src="/README.assets/arithmetic_conv_00.png" width="100">
+<img src="/README.assets/arithmetic_conv_00.png" width="300">
 
 * transposed conv: input=5, padding=1, kernel=3, stride=2, step=1
 
@@ -101,7 +101,7 @@ The output png/pdf is genearted in `./out/`.
 python produce_figure.py arithmetic -i 5 -p 1 -k 3 -s 2 -e 1 -t arithmetic_transposed_conv
 ``` 
 
-![](./README.assets/arithmetic_transposed_conv_00.png)
+<img src="/README.assets/arithmetic_transposed_conv_00.png" width="300">
 
 ### 2.2 Numercal
 
@@ -109,13 +109,13 @@ python produce_figure.py arithmetic -i 5 -p 1 -k 3 -s 2 -e 1 -t arithmetic_trans
 python produce_figure.py numerical -i 5 -p 1 -k 3 -s 2 numerical_conv
 ```
 
-![](./README.assets/numerical_conv_00.png)
+<img src="/README.assets/numerical_conv_00.png" width="300">
 
 ```bash
 python produce_figure.py numerical -i 6 -k 2 -s 2 numerical_max
 ```
 
-![](./README.assets/numerical_max_00.png)
+<img src="/README.assets/numerical_max_00.png" width="300">
 
 ## 3. Usage of Animation
 
@@ -125,7 +125,7 @@ python produce_figure.py numerical -i 6 -k 2 -s 2 numerical_max
 python produce_figure.py arithmetic -i 5 -p 1 -k 3 -s 2 arithmetic_conv -a
 ```
 
-![](./README.assets/arithmetic_conv.gif)
+<img src="/README.assets/arithmetic_conv.gif" width="300">
 
 The gif is genearted in `./gif/`.
 
@@ -133,19 +133,19 @@ The gif is genearted in `./gif/`.
 python produce_figure.py arithmetic -i 5 -p 1 -k 3 -s 2 -t arithmetic_transposed_conv -a
 ```
 
-![](./README.assets/arithmetic_transposed_conv.gif)
+<img src="/README.assets/arithmetic_transposed_conv.gif" width="300">
 
 ```bash
 python produce_figure.py numerical -i 5 -p 1 -k 3 -s 2 numerical_conv -a
 ```
 
-![](./README.assets/numerical_conv.gif)
+<img src="/README.assets/numerical_conv.gif" width="300">
 
 ```bash
 python produce_figure.py numerical -i 6 -k 2 -s 2 numerical_max -a
 ```
 
-![](./README.assets/numerical_max.gif)
+<img src="/README.assets/numerical_max.gif" width="300">
 
 ## 4. Conv vs Transposed Conv in a Matrix Multiplication View.
 
