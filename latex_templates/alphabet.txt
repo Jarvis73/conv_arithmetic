@@ -1,0 +1,45 @@
+\documentclass[class=article,border=10pt]{{standalone}}
+\usepackage{{tikz}}
+\usepackage{{xcolor}}
+\definecolor{{blue}}{{RGB}}{{38,139,210}}
+\definecolor{{cyan}}{{RGB}}{{42,161,152}}
+\definecolor{{base01}}{{RGB}}{{88,110,117}}
+\definecolor{{base02}}{{RGB}}{{7,54,66}}
+\definecolor{{base03}}{{RGB}}{{0,43,54}}
+\usetikzlibrary{{calc,shapes,positioning}}
+\begin{{document}}
+\begin{{tikzpicture}}[scale=.9,every node/.style={{minimum size=1cm}},on grid]
+    \begin{{scope}}[xshift={LEFT_X}cm, yshift={LEFT_Y}cm]
+        \draw[step=10mm, base03, dashed, thick] ({LEFT_TOTAL_INPUT_XY0}) grid ({LEFT_TOTAL_INPUT_XY1});
+        {LEFT_INPUT_UNITS}
+        {LEFT_INPUT_VALUES}
+        \draw[fill=base02, opacity=0.4] ({LEFT_KERNEL_FROM}) rectangle ({LEFT_KERNEL_TO});
+        \draw[step=10mm, base03, thick] ({LEFT_KERNEL_FROM}) grid ({LEFT_KERNEL_TO});
+        {LEFT_KERNEL_VALUES}
+        \begin{{scope}}[xshift={LEFT_OUTPUT_X}cm, yshift={LEFT_OUTPUT_Y}cm]
+            \draw[fill=cyan] ({LEFT_OUTPUT_XY0}) rectangle ({LEFT_OUTPUT_XY1});
+            \draw[step=10mm, base03, thick] ({LEFT_OUTPUT_XY0}) grid ({LEFT_OUTPUT_XY1});
+            \draw[fill=base02, opacity=0.4] ({LEFT_OUTPUT_STEP_XY0}) rectangle ({LEFT_OUTPUT_STEP_XY1});
+            {LEFT_OUTPUT_VALUES}
+        \end{{scope}}
+    \end{{scope}}
+
+    \draw[base03, thick] (\number\numexpr {MID_X}-1, 0) -- (\number\numexpr {MID_X}-1, {TOTAL_HEIGHT});
+
+    \begin{{scope}}[xshift={MID_X}cm, yshift={MID_Y}cm]
+        \draw[step=10mm, base03, dashed] ({MID_SPARSE_XY0}) grid ({MID_SPARSE_XY1});
+        \draw[step=10mm, base03, thick] ({MID_STEP_XY0}) grid ({MID_STEP_XY1});
+        {MID_UNITS}
+        {MID_VALUES}
+        \node (node) at ({MID_TIMES_XY}) {{\LARGE $ \times $}};
+        \node (node) at ({MID_EQUAL_XY}) {{\LARGE $ = $}};
+    \end{{scope}}
+
+    \begin{{scope}}[xshift={RIGHT_INPUT_X}cm, yshift={RIGHT_INPUT_Y}cm]
+        {RIGHT_INPUT_STRING}
+    \end{{scope}}
+    \begin{{scope}}[xshift={RIGHT_OUTPUT_X}cm, yshift={RIGHT_OUTPUT_Y}cm]
+        {RIGHT_OUTPUT_STRING}
+    \end{{scope}}
+\end{{tikzpicture}}
+\end{{document}}
