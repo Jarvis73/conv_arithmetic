@@ -27,6 +27,10 @@ Set ImageMagick security policy 'PDF' blocking conversion ([Ref](https://stackov
 
 just before `</policymap>` in `/etc/ImageMagick-6/policy.xml`.
 
+If an error about `cache resources exhausted` is raised by `convert-im6.q16`, you must make another modification of the `policy.xml`: 
+
+* change `<policy domain="resource" name="disk" value="1GiB"/>` to `<policy domain="resource" name="disk" value="8GiB"/>`
+
 
 ## 2. Usage of Static Frame
 
@@ -81,11 +85,15 @@ python produce_figure.py arithmetic -i 5 -p 1 -k 3 -s 2 -e 0 arithmetic_conv
 
 The output png/pdf is genearted in `./out/`.
 
+![](./README.assets/arithmetic_conv_00.png)
+
 * transposed conv: input=5, padding=1, kernel=3, stride=2, step=0
 
 ```bash
 python produce_figure.py arithmetic -i 5 -p 1 -k 3 -s 2 -e 0 -t arithmetic_transposed_conv
 ``` 
+
+![](./README.assets/arithmetic_transposed_conv_00.png)
 
 ### 2.2 Numercal
 
@@ -93,9 +101,13 @@ python produce_figure.py arithmetic -i 5 -p 1 -k 3 -s 2 -e 0 -t arithmetic_trans
 python produce_figure.py numerical -i 5 -p 1 -k 3 -s 2 -e 0 numerical_conv
 ```
 
+![](./README.assets/numerical_conv_00.png)
+
 ```bash
 python produce_figure.py numerical -i 6 -k 2 -s 2 -e 0 numerical_max
 ```
+
+![](./README.assets/numerical_max_00.png)
 
 ## 3. Usage of Animation
 
@@ -105,19 +117,27 @@ python produce_figure.py numerical -i 6 -k 2 -s 2 -e 0 numerical_max
 python produce_figure.py arithmetic -i 5 -p 1 -k 3 -s 2 arithmetic_conv -a
 ```
 
+![](./README.assets/arithmetic_conv.gif)
+
 The gif is genearted in `./gif/`.
 
 ```bash
 python produce_figure.py arithmetic -i 5 -p 1 -k 3 -s 2 -t arithmetic_transposed_conv -a
 ```
 
+![](./README.assets/arithmetic_transposed_conv.gif)
+
 ```bash
 python produce_figure.py numerical -i 5 -p 1 -k 3 -s 2 numerical_conv -a
 ```
 
+![](./README.assets/numerical_conv.gif)
+
 ```bash
 python produce_figure.py numerical -i 6 -k 2 -s 2 numerical_max -a
 ```
+
+![](./README.assets/numerical_max.gif)
 
 ## 4. Conv vs Transposed Conv in a Matrix Multiplication View.
 
@@ -132,12 +152,16 @@ python produce_figure.py alphabet -i 5 -k 3 alphabet_conv
 python produce_figure.py alphabet -i 5 -k 3 alphabet_conv -a -qa 150
 ```
 
+![](./README.assets/alphabet_conv.gif)
+
 ```bash
 # The first frame
 python produce_figure.py alphabet -i 5 -k 3 alphabet_transposed_conv -t
 # Animation with lower quality for an acceptable time
 python produce_figure.py alphabet -i 5 -k 3 alphabet_transposed_conv -t -a -qa 150
 ```
+
+![](./README.assets/alphabet_transposed_conv.gif)
 
 * Stride = 2
 
@@ -148,12 +172,16 @@ python produce_figure.py alphabet -i 5 -k 3 -s 2 -p 1 alphabet_conv_s2
 python produce_figure.py alphabet -i 5 -k 3 -s 2 -p 1 alphabet_conv_s2 -a -qa 150
 ```
 
+![](./README.assets/alphabet_conv_s2.gif)
+
 ```bash
 # The first frame
 python produce_figure.py alphabet -i 5 -k 3 -s 2 -p 1 alphabet_transposed_conv_s2 -t
 # Animation
 python produce_figure.py alphabet -i 5 -k 3 -s 2 -p 1 alphabet_transposed_conv_s2 -t -a -qa 150
 ```
+
+![](./README.assets/alphabet_transposed_conv_s2.gif)
 
 ## 5. Notes
 
