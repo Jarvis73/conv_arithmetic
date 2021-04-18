@@ -2,6 +2,11 @@
 
 Extension of the [Conv Arithmetic](https://github.com/vdumoulin/conv_arithmetic).
 
+* Examples: `alphabet_conv_s2` and `alphabet_transposed_conv_s2`
+
+![](./README.assets/alphabet_conv_s2.gif)
+![](./README.assets/alphabet_transposed_conv_s2.gif)
+
 ## 1. Preliminary
 
 * [Latex](https://www.ctan.org/tex-archive/systems/texlive/Images): It is recommended to install TexLive 2021.
