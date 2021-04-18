@@ -1,6 +1,6 @@
 # Convolution Arithmetic Extension
 
-Extension of the [Conv Arithmetic](https://github.com/vdumoulin/conv_arithmetic).
+An matrix multiplication view of the [Convolution Arithmetic](https://github.com/vdumoulin/conv_arithmetic), which is better to display the relationship between the convolution and transposed convolution.
 
 * Example 1: `alphabet_conv_s2`
 
@@ -35,9 +35,7 @@ Set ImageMagick security policy 'PDF' blocking conversion ([Ref](https://stackov
 
 just before `</policymap>` in `/etc/ImageMagick-6/policy.xml`.
 
-If an error about `cache resources exhausted` is raised by `convert-im6.q16`, you must make another modification of the `policy.xml`: 
-
-* change `<policy domain="resource" name="disk" value="1GiB"/>` to `<policy domain="resource" name="disk" value="8GiB"/>`
+If an error about `cache resources exhausted` is raised by `convert-im6.q16`, you must make another modification of the `policy.xml`: Change `<policy domain="resource" name="disk" value="1GiB"/>` to `<policy domain="resource" name="disk" value="8GiB"/>`
 
 
 ## 2. Usage of Static Frame
