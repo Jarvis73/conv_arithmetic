@@ -93,7 +93,7 @@ python produce_figure.py arithmetic -i 5 -p 1 -k 3 -s 2 -e 0 arithmetic_conv
 
 The output png/pdf is genearted in `./out/`.
 
-![](./README.assets/arithmetic_conv_00.png)
+![](./README.assets/arithmetic_conv_00.png | width=100)
 
 * transposed conv: input=5, padding=1, kernel=3, stride=2, step=1
 
