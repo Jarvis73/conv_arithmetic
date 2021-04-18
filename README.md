@@ -2,9 +2,12 @@
 
 Extension of the [Conv Arithmetic](https://github.com/vdumoulin/conv_arithmetic).
 
-* Examples: `alphabet_conv_s2` and `alphabet_transposed_conv_s2`
+* Example 1: `alphabet_conv_s2`
 
 ![](./README.assets/alphabet_conv_s2.gif)
+
+* Example 2: `alphabet_transposed_conv_s2`
+
 ![](./README.assets/alphabet_transposed_conv_s2.gif)
 
 ## 1. Preliminary
@@ -92,10 +95,10 @@ The output png/pdf is genearted in `./out/`.
 
 ![](./README.assets/arithmetic_conv_00.png)
 
-* transposed conv: input=5, padding=1, kernel=3, stride=2, step=0
+* transposed conv: input=5, padding=1, kernel=3, stride=2, step=1
 
 ```bash
-python produce_figure.py arithmetic -i 5 -p 1 -k 3 -s 2 -e 0 -t arithmetic_transposed_conv
+python produce_figure.py arithmetic -i 5 -p 1 -k 3 -s 2 -e 1 -t arithmetic_transposed_conv
 ``` 
 
 ![](./README.assets/arithmetic_transposed_conv_00.png)
@@ -103,13 +106,13 @@ python produce_figure.py arithmetic -i 5 -p 1 -k 3 -s 2 -e 0 -t arithmetic_trans
 ### 2.2 Numercal
 
 ```bash
-python produce_figure.py numerical -i 5 -p 1 -k 3 -s 2 -e 0 numerical_conv
+python produce_figure.py numerical -i 5 -p 1 -k 3 -s 2 numerical_conv
 ```
 
 ![](./README.assets/numerical_conv_00.png)
 
 ```bash
-python produce_figure.py numerical -i 6 -k 2 -s 2 -e 0 numerical_max
+python produce_figure.py numerical -i 6 -k 2 -s 2 numerical_max
 ```
 
 ![](./README.assets/numerical_max_00.png)
